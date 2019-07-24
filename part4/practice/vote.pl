@@ -34,15 +34,13 @@ my @hash_arrays = ($hash1_ref, $hash2_ref, $hash3_ref);
 my %shukei_foods;
 
 for my $info (@hash_arrays) {
-	#print %{$info} . "\n";
-	#print Dumper $info;
-	#print Dumper ${$info}{favorite_foods};
 	my @food_array = @{${$info}{favorite_foods}};
 	for my $food (@food_array) {
-		#print $food . "\n";
 		$shukei_foods{$food}++;
 	}
 }
 
-print Dumper \%shukei_foods;
+#print Dumper \%shukei_foods;
+
+# http://www.koikikukan.com/archives/2013/12/18-013333.php
 
