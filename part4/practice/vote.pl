@@ -17,12 +17,32 @@ my $hash1_ref = \%hash1;
 
 my $hash2_ref = {
 	name => 'jiro',
-	favorite_foods => ['ichigo2','melon2','lemon2']
+	favorite_foods => ['ichigo','melon','suika']
+};
+
+my $hash3_ref = {
+	name => 'saburo',
+	favorite_foods => ['ichigo','kiwi','suika']
 };
 
 #print Dumper \$hash2_ref;
 
-my @hash_arrays = ($hash1_ref, $hash2_ref);
+my @hash_arrays = ($hash1_ref, $hash2_ref, $hash3_ref);
 
-print Dumper \@hash_arrays;
+#print Dumper \@hash_arrays;
+
+my %shukei_foods;
+
+for my $info (@hash_arrays) {
+	#print %{$info} . "\n";
+	#print Dumper $info;
+	#print Dumper ${$info}{favorite_foods};
+	my @food_array = @{${$info}{favorite_foods}};
+	for my $food (@food_array) {
+		#print $food . "\n";
+		$shukei_foods{$food}++;
+	}
+}
+
+print Dumper \%shukei_foods;
 
