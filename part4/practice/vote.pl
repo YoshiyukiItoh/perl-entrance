@@ -43,4 +43,7 @@ for my $info (@hash_arrays) {
 #print Dumper \%shukei_foods;
 
 # http://www.koikikukan.com/archives/2013/12/18-013333.php
+for my $key (reverse sort {$shukei_foods{$a} <=> $shukei_foods{$b}} keys %shukei_foods) {
+	print "$key: $shukei_foods{$key}\n";
+}
 
