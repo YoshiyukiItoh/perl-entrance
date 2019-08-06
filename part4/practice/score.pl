@@ -3,11 +3,6 @@ use strict;
 use warnings;
 use Data::Dumper;
 
-#!/usr/bin/env perl
-
-use strict;
-use warnings;
-
 my $alice = {
     name        => 'Alice',
     country     => 'England',
