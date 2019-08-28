@@ -50,13 +50,24 @@ my $ellen = {
 };
 
 my @languages = ("perl", "python", "ruby", "php", "binary");
+my @people = (\$alice, \$bob, \$carol, \$dave, \$ellen);
 
-my $sum = 0;
 
-foreach my $lang (@languages) {
-	$sum += $alice->{$lang};
-	#print "$alice->{$lang}\n";
+foreach my $student (@people) {
+	print "${$student}->{name}\n";
+	my %deref_student = ${$student};
+	
+	my $sum = 0;
+	foreach my $lang (@languages) {
+		$sum += $deref_student->{$lang};
+	}
+	$->{"sum"} = $sum;
 }
+
+#foreach my $lang (@languages) {
+#	$sum += $alice->{$lang};
+#	#print "$alice->{$lang}\n";
+#}
 #print "$sum\n";
 
 $alice->{"sum"} = $sum;
