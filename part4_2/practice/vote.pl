@@ -18,6 +18,14 @@ my $hash_ref3 = {
   favorite_foods => ["pork", "rice"]
 };
 
-print Dumper $hash_ref1;
-print Dumper $hash_ref2;
-print Dumper $hash_ref3;
+my @array = ($hash_ref1, $hash_ref2, $hash_ref3);
+
+#print Dumper \@array;
+
+for my $hash (@array) {
+  print "-----" . "\n";
+  for my $key (sort keys %{$hash}) {
+    #print $key . "\n";
+    print Dumper $hash->{$key};
+  }
+}
